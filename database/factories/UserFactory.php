@@ -18,15 +18,10 @@ $factory->define(App\User::class, function (Faker $faker) {
 
     return [
         'name' => $faker->name,
+        'username' => $faker->userName,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
-    ];
-});
-
-$factory->define(App\Message::class, function (Faker $faker) {
-    return [
-        'content' => $faker->realText(random_int(20, 160)),
-        'image' => $faker->imageUrl(600,338)
+        'avatar' => $faker->imageUrl(300, 300, 'people')
     ];
 });
