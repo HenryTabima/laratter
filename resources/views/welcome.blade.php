@@ -26,11 +26,7 @@
 <div class="row">
     @forelse($messages as $message)
         <div class="col-6">
-            <img class="img-thumbnail" src="{{ $message->image }}">
-            <p class="card-text">
-                {{ $message->content }}
-                <a href="/messeges/{{ $message->id }}">Leer más</a>
-            </p>
+            @include('messages.message')
         </div>
     @empty
         <p>
