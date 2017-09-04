@@ -6,11 +6,16 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        factory(App\User::class, 50)->create()->each(function(App\User $user){
+        $users = factory(App\User::class, 50)->create();
+        
+        $users->each(function(App\User $user) use ($users) {
             factory(App\Message::class, 20)
                 ->create([
                     'user_id' => $user->id
                 ]);
+            $user->follows()->sync(
+                $users->random(10)
+            );
         });
     }
 }
