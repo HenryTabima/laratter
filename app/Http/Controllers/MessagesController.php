@@ -26,7 +26,6 @@ class MessagesController extends Controller
     public function search(Request $request) {
         $query = $request->input('query');
         $messages = Message::search($query)->get();
-        $message->load('user');
         return view('messages.index', [
             'messages' => $messages
         ]);
