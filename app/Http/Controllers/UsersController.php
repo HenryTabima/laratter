@@ -66,6 +66,6 @@ class UsersController extends Controller
     }
 
     private function findByUsername($username) {
-        return User::where('username', $username)->first();
+        return User::where('username', $username)->firstOrFail();
     }
 }
