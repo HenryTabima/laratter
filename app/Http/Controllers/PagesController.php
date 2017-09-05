@@ -8,7 +8,7 @@ use App\Message;
 class PagesController extends Controller
 {
     public function home() {
-        $messages = Message::latest()->paginate(10);
+        $messages = Message::with('user')->latest()->paginate(10);
         return view('welcome', ['messages' => $messages]);
     }
 }

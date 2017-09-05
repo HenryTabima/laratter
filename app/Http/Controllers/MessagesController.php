@@ -11,6 +11,7 @@ class MessagesController extends Controller
     public function show(Message $message) {
         return view('messages.show', ['message' => $message]);
     }
+
     public function create(CreateMessageRequest $request) {
         $user = $request->user();
         $image = $request->file('image');
@@ -20,5 +21,14 @@ class MessagesController extends Controller
             'image' => $image->store('messages', 'public')
         ]);
         return redirect('/messages/'.$message->id);
+    }
+
+    public function search(Request $request) {
+        $query = $request->input('query');
+        $messages = Message::search($query)->get();
+        $message->load('user');
+        return view('messages.index', [
+            'messages' => $messages
+        ]);
     }
 }
