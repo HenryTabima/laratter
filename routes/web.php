@@ -27,9 +27,14 @@ Route::group(['middleware' => 'auth'], function() {
   Route::post('/messages/create', 'MessagesController@create');
   Route::get('/conversation/{conversation}', 'UsersController@showConversation');
   Route::post('/{username}/dms','UsersController@sendPrivateMessage');
+
   Route::post('/{username}/follow', 'UsersController@follow');
   Route::post('/{username}/unfollow', 'UsersController@unfollow');
+
+  Route::get('/api/notifications', 'UsersController@notifications');
 });
+
+Route::get('/api/messages/{message}/responses', 'MessagesController@responses');
 
 Route::get('/{username}/follows', 'UsersController@follows');
 Route::get('/{username}/followers', 'UsersController@followers');
