@@ -7,6 +7,8 @@ Project developed during [Platzi](https://platzi.com)'s Laravel course. simple w
   <img alt="Laratter screenshot" src="laratter.png">
 </details>
 
+> You can see the spanish version of this README [here](README-es.md)
+
 ## Getting started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
