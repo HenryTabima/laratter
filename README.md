@@ -4,7 +4,7 @@ Project developed during [Platzi](https://platzi.com)'s Laravel course. simple w
 
 <details>
   <summary>See Screenshot</summary>
-  ![Larater Screenshot](/laratter.png)
+  <img alt="Laratter screenshot" src="laratter.png">
 </details>
 
 ## Getting started
