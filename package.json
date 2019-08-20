@@ -20,5 +20,10 @@
         "pusher-js": "^4.1.0",
         "tether": "^1.4.0",
         "vue": "^2.1.10"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     }
 }
